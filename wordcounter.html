@@ -1,0 +1,42 @@
+<!DOCTYPE.html>
+<html>
+<head>
+   <title>word count</title>
+</head>
+<body>
+
+<center>
+<h1>WORD CONVERTER</h1>
+<textarea  id="txtarea" cols="50" rows="8"></textarea>
+   <h3><span id="words">0</span>  words and <span id="char">0</span>  characters</h3>
+</center>
+<script>
+var txtarea = document.getElementById("txtarea");
+txtarea.addEventListener("input",function()
+{
+
+var charstr =this.value;
+document.getElementById("char").innerHTML=charstr.length;
+let chararray = charstr.trim().split(" ");
+
+
+
+let filteredarray = chararray.filter(function(par)
+{
+return par != "";
+
+}); 
+
+
+
+
+document.getElementById("words").innerHTML = filteredarray.length;
+
+
+
+});
+
+</script>
+
+</body>
+</html>
